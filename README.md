@@ -12,24 +12,21 @@ There are many of these generators around, but I didn't find one that met my thr
 
 #### Usage
 
-Prepare dependencies
+##### Dependencies
 
-    $ sudo apt-get install python-pip
-    $ sudo pip install freetype-py
-    
-Get the path to a TTF font. If you don't know where they are, try:
+- python3
+- pip3
 
-    $ locate "*.ttf" | less
+```bash
+./install.sh
+```
 
-In `font2c.py`:
-
-- Set `FONT_FILE_PATH` to the path found earlier.
-- Set `FONT_PIXEL_SIZE` to the size of the font, in pixels (seems to be approximate)
-- If the complete range of characters from ASCII 32 to 127 is not required, edit FIRST_CHAR and LAST_CHAR.
 
 Run `font2c.py`:
 
-    $ ./font2c.py
+    $ ./font2c.py -f FILE -s SIZE
+
+where `FILE` is the font file you wish to convert and `SIZE` its size in pixels.
 
 Then compile the C program that will use the generated C code:
 
